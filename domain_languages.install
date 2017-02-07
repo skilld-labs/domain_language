@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function domain_languages_install() {
+  module_set_weight('domain_languages', 10);
+}

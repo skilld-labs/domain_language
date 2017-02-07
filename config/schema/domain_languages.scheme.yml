@@ -1,0 +1,3 @@
+domain.record.*.third_party.domain_languages:
+  type: sequence
+  label: 'Domain languages'

@@ -1,0 +1,11 @@
+domain_languages.admin_languages:
+  path: '/admin/config/domain/available-languages-list/{domain}'
+  defaults:
+    _form: '\Drupal\domain_languages\Form\DomainLanguagesAdministerLanguagesForm'
+    _title: 'Domain languages list'
+  requirements:
+    _permission: 'administer domain languages list'
+  options:
+    parameters:
+      domain:
+        type: entity:domain

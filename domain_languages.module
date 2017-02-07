@@ -1,0 +1,21 @@
+<?php
+
+use Drupal\domain\DomainInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_domain_operations().
+ */
+function domain_languages_domain_operations(DomainInterface $domain) {
+  $operations = [];
+
+  if (\Drupal::currentUser()->hasPermission('administer domain languages list')) {
+    $operations['domain_languages'] = [
+      'title' => t('Languages list'),
+      'url' => Url::fromRoute('domain_languages.admin_languages', ['domain' => $domain->id()]),
+      'weight' => 80,
+    ];
+  }
+
+  return $operations;
+}

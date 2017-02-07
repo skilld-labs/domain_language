@@ -1,0 +1,4 @@
+administer domain languages list:
+  description: 'Select languages list available for domain.'
+  title: 'Administer domain languages list'
+  restrict access: TRUE

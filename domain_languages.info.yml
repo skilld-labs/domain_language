@@ -1,0 +1,11 @@
+name: Domain Languages
+description: 'Adds languages support from domains.'
+type: module
+package: Domain
+
+dependencies:
+  - domain
+  - language
+
+core: '8.x'
+version: '8.x-1.x'
