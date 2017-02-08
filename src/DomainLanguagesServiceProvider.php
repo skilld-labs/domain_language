@@ -24,8 +24,8 @@ class DomainLanguagesServiceProvider extends ServiceProviderBase {
         new Reference('language.config_factory_override'),
         new Reference('request_stack'),
         new Reference('domain.negotiator'),
-        new Reference('domain.loader')
+        new Reference('domain.loader'),
       ]);
   }
-}
 
+}

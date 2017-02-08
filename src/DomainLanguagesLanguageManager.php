@@ -9,11 +9,15 @@ use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\Language;
 use Drupal\domain\DomainLoaderInterface;
 use Drupal\domain\DomainNegotiatorInterface;
-use Drupal\domain\Entity\Domain;
+use Drupal\domain\DomainInterface;
 use Drupal\language\Config\LanguageConfigFactoryOverrideInterface;
 use Drupal\language\ConfigurableLanguageManager;
 use Symfony\Component\HttpFoundation\RequestStack;
 
+/**
+ * Overrides default LanguageManager to provide configured languages
+ * restricted by related domain record.
+ */
 class DomainLanguagesLanguageManager extends ConfigurableLanguageManager {
 
   /**
@@ -128,7 +132,7 @@ class DomainLanguagesLanguageManager extends ConfigurableLanguageManager {
     // @TODO: Add check "is admin path" if needed.
     $domain_from_request = $this->requestStack->getCurrentRequest()->get('domain');
 
-    if ($domain_from_request && $domain_from_request instanceof Domain) {
+    if ($domain_from_request && $domain_from_request instanceof DomainInterface) {
       $domain = $domain_from_request;
     }
     elseif ($domain_from_request && is_string($domain_from_request)) {
@@ -146,4 +150,5 @@ class DomainLanguagesLanguageManager extends ConfigurableLanguageManager {
 
     return $domain ? $domain->getThirdPartySetting('domain_languages', 'languages', []) : [];
   }
+
 }

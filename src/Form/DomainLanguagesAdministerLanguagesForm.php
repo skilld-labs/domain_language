@@ -128,5 +128,3 @@ class DomainLanguagesAdministerLanguagesForm extends FormBase {
   }
 
 }
-
-
