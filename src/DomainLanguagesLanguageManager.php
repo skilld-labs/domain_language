@@ -15,8 +15,7 @@ use Drupal\language\ConfigurableLanguageManager;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
- * Overrides default LanguageManager to provide configured languages
- * restricted by related domain record.
+ * Provide configured languages restricted by related domain record.
  */
 class DomainLanguagesLanguageManager extends ConfigurableLanguageManager {
 
