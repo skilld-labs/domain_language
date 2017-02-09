@@ -123,7 +123,7 @@ class DomainLanguagesLanguageManager extends ConfigurableLanguageManager {
    * @return array
    *   Languages list granted for current active domain.
    */
-  private function domainGrantedLanguages() {
+  protected function domainGrantedLanguages() {
     $domain = NULL;
 
     // Getting "domain" param from the request for using
